@@ -5,7 +5,7 @@ import {
     Route,
 } from "react-router-dom";
 import MainPage from "./pages/MainPage";
-import GamePage from "./pages/GamePage";
+import GameReadyPage from "./pages/GameReadyPage";
 import ResultPage from "./pages/ResultPage";
 
 export default () => {
@@ -15,7 +15,7 @@ export default () => {
                 <Route exact path="/">
                     <MainPage />
                 </Route>
-                <Route path="/topics/:id/ready" render={() => <GamePage />}>
+                <Route path="/topics/:id/ready" render={() => <GameReadyPage />}>
                 </Route>
                 <Route path="/result">
                     <ResultPage />
