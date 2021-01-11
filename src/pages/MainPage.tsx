@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import categories from '../data/categories.json';
 import {useHistory} from "react-router";
 import {useRecoilState} from "recoil";
-import {selectedTopicState} from "../state";
+import {selectedTopicState} from "../states/topic";
 
 const MainPage: React.FunctionComponent = () => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {useRecoilValue} from "recoil";
-import {getSelectedTopicState} from "../state";
+import {getSelectedTopicState} from "../states/topic";
 
 const GameReadyPage: React.FunctionComponent = () => {
 
