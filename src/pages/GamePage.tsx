@@ -3,8 +3,8 @@ import {useRouteMatch} from "react-router";
 
 const GamePage: React.FunctionComponent = () => {
 
-    let match = useRouteMatch<{ name: string }>();
-    let topic = match.params.name;
+    let match = useRouteMatch<{ id: string }>();
+    let topic = match.params.id;
 
     return (
         <div>

@@ -15,7 +15,7 @@ export default () => {
                 <Route exact path="/">
                     <MainPage />
                 </Route>
-                <Route path="/topics/:name" render={() => <GamePage />}>
+                <Route path="/topics/:id/ready" render={() => <GamePage />}>
                 </Route>
                 <Route path="/result">
                     <ResultPage />
