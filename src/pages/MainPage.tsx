@@ -1,14 +1,24 @@
 import React, {useCallback} from 'react';
 import categories from '../data/categories.json';
 import {useHistory} from "react-router";
+import {useRecoilState} from "recoil";
+import {selectedTopicState} from "../state";
 
 const MainPage: React.FunctionComponent = () => {
 
+    const [selectedTopic, setSelectedTopic] = useRecoilState(selectedTopicState);
+
     let history = useHistory();
 
-    const onClickTopic = useCallback((topicId: number) => () => {
-        history.push(`/topics/${topicId}/ready`)
-    }, [history]);
+    const onClickTopic = useCallback((category, topic) => () => {
+        setSelectedTopic({
+            categoryId: category.id,
+            categoryName: category.name,
+            topicId: topic.id,
+            topicName: topic.name,
+        })
+        history.push(`/topics/${topic.id}/ready`)
+    }, [setSelectedTopic, history]);
 
     return (
         <div className="bg-light">
@@ -29,7 +39,7 @@ const MainPage: React.FunctionComponent = () => {
                                             return (
                                                 <div key={topic.id} className="col-6 mb-2">
                                                     <div className="bg-white p-3 rounded"
-                                                         onClick={onClickTopic(topic.id)}>
+                                                         onClick={onClickTopic(category, topic)}>
                                                         {topic.name}
                                                     </div>
                                                 </div>

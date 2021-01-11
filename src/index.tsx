@@ -4,9 +4,12 @@ import reportWebVitals from './reportWebVitals';
 import AppRoutes from './AppRoutes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import {RecoilRoot} from "recoil";
 
 ReactDOM.render(
-    <AppRoutes/>,
+    <RecoilRoot>
+        <AppRoutes/>
+    </RecoilRoot>,
     document.getElementById('root')
 );
 
